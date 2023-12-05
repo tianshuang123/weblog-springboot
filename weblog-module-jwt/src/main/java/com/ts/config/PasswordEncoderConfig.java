@@ -25,6 +25,12 @@ public class PasswordEncoderConfig {
         BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
         System.out.println(encoder.encode("test"));
     }
+
+    @Bean
+    public PasswordEncoder passwordEncoder2() {
+        // BCrypt 是一种安全且适合密码存储的哈希算法，它在进行哈希时会自动加入“盐”，增加密码的安全性。
+        return new BCryptPasswordEncoder();
+    }
 }
 
 
